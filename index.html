@@ -5,18 +5,24 @@
     </head>
 
     <body>
-        <p>Find out what the word is!</p><br>
-        <input type="button" value="New Game" onclick="start()"><br>
+        <p align=center><b><font size="6" COLOR="#8B0000">Hangman Game</font></b></p>
+        <hr>
+        <p>Guess the word!
+        <input type="button" value="New Game" onclick="start()"></p>
+        <p>Type a letter to check if it's in the word: </p>
         <input type="text" id="txtletter">
-        <input type="button" value="Play" onclick="play()"><br>
+        <input type="button" value="Check" onclick="play()"><br>
 
-        <p id="pEnd">
-         ___<br>
-        |<br>
-         0<br>
-        -|-<br>
-          ||<br> 
-        </p>
+        <p id="pEnd"><pre>
+  _______
+ |/      |
+ |      (_)
+ |      \|/
+ |       |
+ |      / \
+ |
+_|___
+        </pre></p>
         <p id="pBoss"></p><br>
         <p id="pGame"></p><br>
     </body>

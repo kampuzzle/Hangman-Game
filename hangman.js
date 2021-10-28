@@ -38,7 +38,7 @@ debugger
         countError += 1;
     }
     pBoss.innerHTML = getBoss();
-    if(countError === 7){
+    if(countError === 8){
         alert("You died! Game Over :(");
     }
     txtletter.value = "";
@@ -59,38 +59,76 @@ function getBoss(){
     if(countError === 0){
         return "";
     }else if(countError === 1){
-        return "___<br>"
-                +"| <br>";
+        return "<pre>  _______<br>"
+        +" |/      |<br>"
+        +" |<br>"      
+        +" |<br>"      
+        +" |<br>"      
+        +" |<br>"      
+        +" |<br>"
+       +"_|___</pre><br>";
     }else if(countError === 2){
-        return "___<br>"
-                +"|<br>"
-                +"0<br>";
+        return "<pre>  _______<br>"
+        +" |/      |<br>"
+        +" |      (_)<br>"      
+        +" |<br>"      
+        +" |<br>"      
+        +" |<br>"      
+        +" |<br>"
+       +"_|___</pre><br>";
     }else if(countError === 3){
-        return "___<br>"
-                +"|<br>"
-                +"0<br>"
-                +"-<br>";
+        return "<pre>  _______<br>"
+        +" |/      |<br>"
+        +" |      (_)<br>"      
+        +" |       |<br>"      
+        +" |<br>"      
+        +" |<br>"      
+        +" |<br>"
+       +"_|___</pre><br>";
     }else if(countError === 4){
-        return "___<br>"
-                +"|<br>"
-                +"0<br>"
-                +"-|<br>";
+        return "<pre>  _______<br>"
+        +" |/      |<br>"
+        +" |      (_)<br>"      
+        +" |      -|<br>"      
+        +" |<br>"      
+        +" |<br>"      
+        +" |<br>"
+       +"_|___</pre><br>";
     }else if(countError === 5){
-        return "___<br>"
-                +"|<br>"
-                +"0<br>"
-                +"-|- <br>";
+        return "<pre>  _______<br>"
+        +" |/      |<br>"
+        +" |      (_)<br>"      
+        +" |      -|-<br>"      
+        +" |<br>"      
+        +" |<br>"      
+        +" |<br>"
+       +"_|___</pre><br>";
     }else if(countError === 6){
-        return "___<br>"
-                +"|<br>"
-                +"0<br>"
-                +"-|-<br>"
-                +"|<br>";
+        return "<pre>  _______<br>"
+        +" |/      |<br>"
+        +" |      (_)<br>"      
+        +" |      -|-<br>"      
+        +" |       |<br>"      
+        +" |<br>"      
+        +" |<br>"
+       +"_|___</pre><br>";
     }else if(countError === 7){
-        return "___<br>"
-                +"|<br>"
-                +"0<br>"
-                +"-|-<br>"
-                +"||<br>";
+        return "<pre>  _______<br>"
+        +" |/      |<br>"
+        +" |      (_)<br>"      
+        +" |      -|-<br>"      
+        +" |       |<br>"      
+        +" |      /<br>"      
+        +" |<br>"
+       +"_|___</pre><br>";
+    }else if(countError === 8){
+        return "<pre>  _______<br>"
+        +" |/      |<br>"
+        +" |      (_)<br>"      
+        +" |      -|-<br>"      
+        +" |       |<br>"      
+        +" |      // <br>"      
+        +" |<br>"
+       +"_|___</pre><br>";
     }
 }
