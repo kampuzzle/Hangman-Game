@@ -12,16 +12,18 @@ function start(){
 
     for(i = 0; i < wordGame.length; i++){
         var pD = document.createElement("p" + i);
-        pD.innerText = "_";
+        pD.innerText = "_ ";
         pGame.append(pD);
     }
 }
 
 function play(){
+debugger
     var pGame = document.getElementById("pGame");
-    var pEnd = document.getElementById("End");
+    var pEnd = document.getElementById("pEnd");
     var pBoss = document.getElementById("pBoss");
     var txtletter = document.getElementById("txtletter");
+    var countEmptyLetter = 0;
 
     if(wordGame.includes(txtletter.value)){
         alert("You got it!");
@@ -32,13 +34,14 @@ function play(){
             }
         }
     }else{
-        alert("Oh-oh");
+        alert("Uh-oh");
         countError += 1;
     }
     pBoss.innerHTML = getBoss();
     if(countError === 7){
         alert("You died! Game Over :(");
     }
+    txtletter.value = "";
 }
 
 
@@ -47,7 +50,7 @@ function words(){
 }
 
 function getRandom(min, max){
-    min = Math.cell(min);
+    min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random()*(max - min)) + min;
 }
@@ -66,36 +69,28 @@ function getBoss(){
         return "___<br>"
                 +"|<br>"
                 +"0<br>"
-                +"/<br>";
+                +"-<br>";
     }else if(countError === 4){
         return "___<br>"
                 +"|<br>"
                 +"0<br>"
-                +"/<br>"
-                +"/|<br>";
+                +"-|<br>";
     }else if(countError === 5){
         return "___<br>"
                 +"|<br>"
                 +"0<br>"
-                +"/<br>"
-                +"/|<br>"
-                +"/|\<br>";
+                +"-|- <br>";
     }else if(countError === 6){
         return "___<br>"
                 +"|<br>"
                 +"0<br>"
-                +"/<br>"
-                +"/|<br>"
-                +"/|\<br>"
+                +"-|-<br>"
                 +"|<br>";
     }else if(countError === 7){
         return "___<br>"
                 +"|<br>"
                 +"0<br>"
-                +"/<br>"
-                +"/|<br>"
-                +"/|\<br>"
-                +"|<br>"
+                +"-|-<br>"
                 +"||<br>";
     }
 }
