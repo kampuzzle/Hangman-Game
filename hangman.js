@@ -4,16 +4,19 @@ var countError = 0;
 
 function start(){
     var arrayw = words();
-    var num = getRandom(0,5);
+    var num = getRandom(0,20);
     wordGame = arrayw[num];
     var pEnd = document.getElementById("pEnd");
     var pGame = document.getElementById("pGame");
-    pEnd.style.visibility = "hidden";
+    pGame.style.visibility = "visible";
+    pBoss.style.visibility = "visible";
 
-    for(i = 0; i < wordGame.length; i++){
-        var pD = document.createElement("p" + i);
-        pD.innerText = "_ ";
-        pGame.append(pD);
+    if(countError !== 8){
+        for(i = 0; i < wordGame.length; i++){
+            var pD = document.createElement("p" + i);
+            pD.innerText = "__ ";
+            pGame.append(pD);
+        }
     }
 }
 
@@ -39,14 +42,18 @@ debugger
     }
     pBoss.innerHTML = getBoss();
     if(countError === 8){
-        alert("You died! Game Over :(");
+        alert("You died! Game Over :(\nThe word was "+wordGame);
+        countError = 0;
+        pGame.style.visibility = "hidden";
+        pBoss.style.visibility = "hidden";
+        resetGame();
     }
     txtletter.value = "";
 }
 
 
 function words(){
-    return["cat","dog","outside","cellphone", "dress","carrot"];
+    return["cat","dog","outside","cellphone", "dress","carrot","abyss","avenue","awkward","bandwagon","galaxy","gazebo", "gossip","icebox","luxury","microwave","oxygen","subway","transplant","unknown","witchcraft"];
 }
 
 function getRandom(min, max){
@@ -132,3 +139,4 @@ function getBoss(){
        +"_|___</pre><br>";
     }
 }
+
